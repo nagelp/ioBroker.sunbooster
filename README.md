@@ -8,7 +8,7 @@ This is an unofficial integration and is not affiliated with or supported by Sun
 
 This software is provided "as is", without warranty of any kind. Use at your own risk.
 
-The author is not responsible for any damage, data loss, account issues, or unexpected behavior caused by the use of this integration.
+The author is not responsible for any damage, data loss, account issues, or unexpected behavior caused by the use of this integration. See licencse section for more details.
 
 The integration uses authentication data provided by the user from their own device.
 No credentials are transmitted or stored externally.
@@ -16,7 +16,7 @@ No credentials are transmitted or stored externally.
 ---
 The following is supported:
 - sensors for DC/AC charging/discharging power, charge/remaining time, temperature and other
-- turn on/off AC charge/discharge (from/to house grid)
+- turn on/off AC charge/discharge (from/to house grid), power to house grid is supported 100W - 800W
 - turn on/off AC outlets as well USB ports
 
 What's not supported:
