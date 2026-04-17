@@ -46,7 +46,7 @@ due to technical limitations the official app will stop working shortly later af
 - An Android phone with the Sunbooster app installed (be sure to log out of the app first)
 - USB cable to connect your phone to your PC
 - Android Platform Tools (ADB), available at https://developer.android.com/tools/releases/platform-tools to run adb commands
-- The extraction script: extract_sunbooster_values.py
+- The extraction script: extract_sunbooster_values.py (check "tools" folder above)
 
 1. Extract the ADB tools to a folder of your choice, e.g. c:\adb
 2. Download and move the script to that same folder
