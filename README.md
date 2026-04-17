@@ -76,7 +76,7 @@ Sometimes the script doesn't seem to work properly and does not output the uid f
 1. Create a aub folder in your HA directory "custom_components" called Sunbooster and copy all files and folders of this integration into that sub folder
 2. Restart Home Assistant
 3. Add the new "Sunbooster" integration via the UI.
-4. Fill in the required values you received from the script. Do not change the expiration values, leave them on default, then hit submit.
+4. Do not change the expiration values, leave them on default, and fill out all other fields with the data you received from the script, then hit submit.
   <img width="263" height="448" alt="sunbooster_ha_setup" src="https://github.com/user-attachments/assets/5009155c-45a9-41ce-817f-8b252c45223d" />
 
 5. You should see a new device in that ingegration now along with the sensors and switches to control it.
