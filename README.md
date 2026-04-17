@@ -41,6 +41,7 @@ due to technical limitations the official app will stop working shortly later af
 
 ## What you need
 
+- Python (unless you extract the required data yourself, see below)
 - An already existing account for the Sunbooster app and your device registered to it
 - An Android phone with the Sunbooster app installed (be sure to log out of the app first)
 - USB cable to connect your phone to your PC
@@ -69,8 +70,10 @@ The script should output the following on your screen:
 - deviceKey
 - deviceName and productName (only for debug purposes, not required for HA)
 
+Sometimes the script doesn't seem to work properly and does not output the uid for example. In that case, repeat all steps and wait longer after you log into the Sunbooster app (up to a minute should be safe) before pressing a key to continue. Alternatively, run the ADB commands yourself and get the data from the output manually.
+
 ## Integration installation
-1. Create a aub folder in your HA directory "custom_components" called Sunbooster and copy all .py files of this integration into that sub folder
+1. Create a aub folder in your HA directory "custom_components" called Sunbooster and copy all files and folders of this integration into that sub folder
 2. Restart Home Assistant
 3. Add the new "Sunbooster" integration via the UI.
 4. Fill in the required values you received from the script. Do not change the expiration values, leave them on default, then hit submit.
@@ -97,4 +100,4 @@ The script should output the following on your screen:
 **A:** due to some limitations I had to decide to do it this way, sorry. The script will only read a filtered log of your phone and store that data only on your computer locally. If you feel unsafe about that you can also check the script and run the required commands yourself, then extract the data yourself manually. I merely created it for users who want to save time or are not experienced enough to get the data themselves.
 
 **Q:** I ran the script but it's not working!\
-**A:** Worst thing you can do is to only report "it's not working" as no one can read your mind or your screen. Always be specific (imagine you describe what happens on your computer to a blind person). There's a good chance you did not read everything properly and forgot a step (I speak of self-experience).
+**A:** Worst thing you can do is to only report "it's not working" as no one can read your mind or your screen. Always be specific (imagine you describe what happens on your computer to a blind person). There's a good chance you did not read everything properly and forgot a step (I speak of self-experience). Also, the script is not 100% stable, sometimes it will not output everything, see above.
