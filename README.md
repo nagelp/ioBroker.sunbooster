@@ -70,12 +70,14 @@ Then add an instance of `sunbooster` in the admin and configure it as below.
 
 In the adapter admin settings enter the seven values printed by `extract-credentials.js`, exactly as shown (tokens include the `Bearer ` prefix). The WebSocket/REST URLs default to the European zone and can be changed under *Advanced*.
 
+**Live updates:** the device only reports on its own when something changes. Like the app does while it's open, the adapter asks it every 10 seconds to push live values (*Advanced → Live update interval*; `0` turns this off). While this runs, changed values arrive about every 5 seconds. Each request is one small cloud API call.
+
 The rotating tokens are stored in `sunbooster.<i>.info.tokens` and reused across restarts; the admin fields are only the initial seed. Once the adapter runs, it owns the token chain: every refresh invalidates the previous refresh token, so don't use the same `credentials.json` anywhere else (it goes stale after the adapter's first refresh).
 
 ## Notes & limitations
 
 - **Cloud-dependent.** If the vendor cloud or token scheme changes, this can break.
-- **REST read-back lags.** Live values come from the WebSocket; the REST snapshot (used only to seed state on connect) can be a few seconds stale.
+- **REST read-back lags.** The cloud's REST values are only as fresh as the device's last report; the adapter uses them only to fill in all states on connect and takes live values from the WebSocket.
 - **GRID (1st gen).** Should work in principle (same cloud/property model) but is untested here; property codes may differ.
 
 ## Development

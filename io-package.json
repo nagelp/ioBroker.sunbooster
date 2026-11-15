@@ -1,7 +1,7 @@
 {
   "common": {
     "name": "sunbooster",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "title": "Sunbooster POWERSTATION GRID",
     "titleLang": {
       "en": "Sunbooster POWERSTATION GRID",
@@ -40,7 +40,17 @@
         "js-controller": ">=5.0.19"
       }
     ],
-    "messagebox": false
+    "messagebox": false,
+    "news": {
+      "0.2.0": {
+        "en": "Live updates: periodically ask the device to push current values (configurable interval)",
+        "de": "Live-Werte: Gerät wird regelmäßig zum Senden aktueller Werte aufgefordert (Intervall einstellbar)"
+      },
+      "0.1.0": {
+        "en": "Initial release",
+        "de": "Erste Version"
+      }
+    }
   },
   "native": {
     "accessToken": "",
@@ -50,6 +60,7 @@
     "uid": "",
     "productKey": "",
     "deviceKey": "",
+    "updateInterval": 10,
     "wsUrl": "wss://iot-ws.quecteleu.com/ws/v1",
     "apiBase": "https://iot-api.acceleronix.io"
   },
@@ -58,7 +69,9 @@
     {
       "_id": "info",
       "type": "channel",
-      "common": { "name": "Information" },
+      "common": {
+        "name": "Information"
+      },
       "native": {}
     },
     {

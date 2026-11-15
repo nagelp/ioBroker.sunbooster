@@ -43,6 +43,7 @@ class Sunbooster extends utils.Adapter {
                 deviceKey: cfg.deviceKey,
                 wsUrl: cfg.wsUrl || undefined,
                 apiBase: cfg.apiBase || undefined,
+                liveInterval: cfg.updateInterval,
             },
             this.log,
         );

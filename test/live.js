@@ -52,7 +52,7 @@ let dataCount = 0;
 client.on("data", (kv) => {
     dataCount++;
     const show = {};
-    for (const k of ["battery_percentage", "charge_mode_data_hm", "MIG_connection_data_hm", "charge_mode_power_hm", "ac_output_Power", "device_status"]) {
+    for (const k of ["battery_percentage", "total_output_power", "charge_mode_data_hm", "MIG_connection_data_hm", "charge_mode_power_hm", "ac_output_Power", "device_status"]) {
         if (kv[k] !== undefined) show[k] = kv[k];
     }
     if (Object.keys(show).length) console.log(`data#${dataCount}:`, JSON.stringify(show));

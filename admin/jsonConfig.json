@@ -66,6 +66,16 @@
       "type": "panel",
       "label": "Advanced",
       "items": {
+        "updateInterval": {
+          "type": "number",
+          "label": "Live update interval (seconds)",
+          "help": "Every N seconds the adapter asks the device to push live values, as the app does while it is open. 0 disables it (values then only update when the device reports on its own). Minimum 5.",
+          "min": 0,
+          "max": 3600,
+          "newLine": true,
+          "sm": 12,
+          "md": 6
+        },
         "wsUrl": {
           "type": "text",
           "label": "WebSocket URL",
