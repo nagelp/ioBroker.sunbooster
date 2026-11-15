@@ -53,6 +53,9 @@ The current app (V1.1.0) doesn't log the login, but the older **V1.0.0** does:
 
 You can reinstall the latest app afterwards; the tokens keep working.
 
+> [!IMPORTANT]
+> **The app gets logged out shortly after the adapter starts.** The adapter continues the app session you captured, and its first token refresh invalidates the app's copy. This is expected and only happens once: log in to the app again (if that doesn't work, clear the app's data or reinstall it). After that, the app and the adapter work side by side.
+
 ## Installation
 
 On the ioBroker host:
@@ -73,7 +76,6 @@ The rotating tokens are stored in `sunbooster.<i>.info.tokens` and reused across
 
 - **Cloud-dependent.** If the vendor cloud or token scheme changes, this can break.
 - **REST read-back lags.** Live values come from the WebSocket; the REST snapshot (used only to seed state on connect) can be a few seconds stale.
-- **Using the app in parallel.** After the adapter refreshes tokens, the official app session may need a re-login (clear app data / re-login).
 - **GRID (1st gen).** Should work in principle (same cloud/property model) but is untested here; property codes may differ.
 
 ## Development
