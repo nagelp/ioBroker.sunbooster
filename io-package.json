@@ -72,6 +72,14 @@
     "wsUrl": "wss://iot-ws.quecteleu.com/ws/v1",
     "apiBase": "https://iot-api.acceleronix.io"
   },
+  "encryptedNative": [
+    "accessToken",
+    "refreshToken"
+  ],
+  "protectedNative": [
+    "accessToken",
+    "refreshToken"
+  ],
   "objects": [],
   "instanceObjects": [
     {

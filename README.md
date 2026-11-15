@@ -72,7 +72,7 @@ In the adapter admin settings enter the seven values printed by `extract-credent
 
 **Live updates:** the device only reports on its own when something changes. Like the app does while it's open, the adapter asks it every 10 seconds to push live values (*Advanced → Live update interval*; `0` turns this off). While this runs, changed values arrive about every 5 seconds. Each request is one small cloud API call.
 
-The rotating tokens are stored in `sunbooster.<i>.info.tokens` and reused across restarts; the admin fields are only the initial seed. Once the adapter runs, it owns the token chain: every refresh invalidates the previous refresh token, so don't use the same `credentials.json` anywhere else (it goes stale after the adapter's first refresh).
+The admin token fields are stored encrypted and are not readable by other adapters. The rotating tokens are kept in an encrypted file in the instance data directory (`iobroker-data/sunbooster.<i>/tokens.json`), not in a state, and reused across restarts; the admin fields are only the initial seed. Once the adapter runs, it owns the token chain: every refresh invalidates the previous refresh token, so don't use the same `credentials.json` anywhere else (it goes stale after the adapter's first refresh). To start over with freshly captured tokens, enter them in the admin settings (a newer refresh token wins) or delete `tokens.json`.
 
 ## Notes & limitations
 

@@ -3,13 +3,13 @@
 const utils = require("@iobroker/adapter-core");
 const { SunboosterClient } = require("./lib/client");
 const mapping = require("./lib/mapping");
-
-const TOKENS_STATE = "info.tokens";
+const { TokenStore } = require("./lib/token-store");
 
 class Sunbooster extends utils.Adapter {
     constructor(options) {
         super({ ...options, name: "sunbooster" });
         this.client = null;
+        this.tokenStore = null;
         this.on("ready", this.onReady.bind(this));
         this.on("stateChange", this.onStateChange.bind(this));
         this.on("unload", this.onUnload.bind(this));
@@ -24,6 +24,10 @@ class Sunbooster extends utils.Adapter {
             return;
         }
 
+        this.tokenStore = new TokenStore(utils.getAbsoluteInstanceDataDir(this), {
+            encrypt: (s) => this.encrypt(s),
+            decrypt: (s) => this.decrypt(s),
+        });
         const tokens = await this._loadTokens();
         if (!tokens.accessToken || !tokens.refreshToken) {
             this.log.error("No tokens configured - enter the captured access/refresh tokens in the adapter settings.");
@@ -100,12 +104,6 @@ class Sunbooster extends utils.Adapter {
                 native: {},
             });
         }
-
-        await this.setObjectNotExistsAsync(TOKENS_STATE, {
-            type: "state",
-            common: { name: "Rotating auth tokens (managed)", type: "string", role: "json", read: true, write: false },
-            native: {},
-        });
     }
 
     async _snapshot() {
@@ -158,24 +156,21 @@ class Sunbooster extends utils.Adapter {
             refreshExpiration: Number(cfg.refreshExpiration) || 0,
         };
         try {
-            const st = await this.getStateAsync(TOKENS_STATE);
-            if (st && st.val) {
-                const saved = JSON.parse(st.val);
-                // Prefer saved tokens only if the refresh token is still valid and newer.
-                if (saved.refreshToken && (saved.refreshExpiration || 0) >= seed.refreshExpiration) {
-                    this.log.info("Using stored rotating tokens");
-                    return saved;
-                }
+            const saved = await this.tokenStore.load();
+            // Prefer saved tokens only if the refresh token is still valid and newer.
+            if (saved && saved.refreshToken && (saved.refreshExpiration || 0) >= seed.refreshExpiration) {
+                this.log.info("Using stored rotating tokens");
+                return saved;
             }
         } catch (err) {
-            this.log.debug(`No stored tokens: ${err && err.message}`);
+            this.log.warn(`Could not read stored tokens, falling back to configured ones: ${err && err.message}`);
         }
         return seed;
     }
 
     async _saveTokens(bundle) {
         try {
-            await this.setStateAsync(TOKENS_STATE, { val: JSON.stringify(bundle), ack: true });
+            await this.tokenStore.save(bundle);
             this.log.debug("Stored refreshed tokens");
         } catch (err) {
             this.log.warn(`Could not store tokens: ${err && err.message}`);
