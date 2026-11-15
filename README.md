@@ -45,6 +45,16 @@ The current app build (V1.1.0) does **not** log the tokens. An older build (**V1
 
 > The expiration values are **unix seconds**. Keep the `Bearer ` prefix on both tokens.
 
+## Installation
+
+On the ioBroker host:
+
+```bash
+iobroker url https://github.com/nagelp/ioBroker.sunbooster
+```
+
+Then add an instance of `sunbooster` in the admin and configure it as below.
+
 ## Configuration
 
 In the adapter admin settings enter: access token, refresh token, both expiry timestamps, `uid`, `productKey`, `deviceKey`. The WebSocket/REST URLs default to the European zone and can be changed under *Advanced*.

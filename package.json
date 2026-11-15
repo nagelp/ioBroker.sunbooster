@@ -14,7 +14,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/nagelp/iobroker-sunbooster-grid"
+    "url": "https://github.com/nagelp/ioBroker.sunbooster"
   },
   "engines": {
     "node": ">=20"
