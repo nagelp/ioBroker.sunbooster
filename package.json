@@ -1,0 +1,41 @@
+{
+  "name": "iobroker.sunbooster",
+  "version": "0.1.0",
+  "description": "ioBroker adapter to monitor and control the Sunbooster POWERSTATION GRID / GRID+ via the vendor cloud",
+  "author": "nagelp",
+  "license": "MIT",
+  "keywords": [
+    "iobroker",
+    "sunbooster",
+    "powerstation",
+    "grid",
+    "battery",
+    "energy"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nagelp/iobroker-sunbooster-grid"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "main": "main.js",
+  "files": [
+    "admin/",
+    "lib/",
+    "main.js",
+    "io-package.json",
+    "LICENSE"
+  ],
+  "dependencies": {
+    "@iobroker/adapter-core": "^3.2.3",
+    "ws": "^8.18.0"
+  },
+  "devDependencies": {
+    "@iobroker/testing": "^5.0.0"
+  },
+  "scripts": {
+    "test:unit": "node --test test/",
+    "test:live": "node test/live.js"
+  }
+}

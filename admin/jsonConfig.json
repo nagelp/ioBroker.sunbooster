@@ -1,0 +1,85 @@
+{
+  "i18n": true,
+  "type": "tabs",
+  "items": {
+    "_device": {
+      "type": "panel",
+      "label": "Device & tokens",
+      "items": {
+        "_info": {
+          "type": "staticText",
+          "newLine": true,
+          "text": "Enter the values captured from the Sunbooster app (access token, refresh token, uid, productKey, deviceKey). See the README for how to obtain them. Tokens rotate automatically; the refresh token is valid ~30 days.",
+          "sm": 12
+        },
+        "accessToken": {
+          "type": "text",
+          "label": "Access token",
+          "help": "Full value starting with 'Bearer '",
+          "newLine": true,
+          "sm": 12,
+          "md": 12
+        },
+        "refreshToken": {
+          "type": "text",
+          "label": "Refresh token",
+          "help": "Full value starting with 'Bearer '",
+          "newLine": true,
+          "sm": 12,
+          "md": 12
+        },
+        "accessExpiration": {
+          "type": "number",
+          "label": "Access token expiry (unix seconds)",
+          "newLine": true,
+          "sm": 12,
+          "md": 6
+        },
+        "refreshExpiration": {
+          "type": "number",
+          "label": "Refresh token expiry (unix seconds)",
+          "sm": 12,
+          "md": 6
+        },
+        "uid": {
+          "type": "text",
+          "label": "User id (uid)",
+          "newLine": true,
+          "sm": 12,
+          "md": 4
+        },
+        "productKey": {
+          "type": "text",
+          "label": "Product key",
+          "sm": 12,
+          "md": 4
+        },
+        "deviceKey": {
+          "type": "text",
+          "label": "Device key",
+          "sm": 12,
+          "md": 4
+        }
+      }
+    },
+    "_advanced": {
+      "type": "panel",
+      "label": "Advanced",
+      "items": {
+        "wsUrl": {
+          "type": "text",
+          "label": "WebSocket URL",
+          "newLine": true,
+          "sm": 12,
+          "md": 6
+        },
+        "apiBase": {
+          "type": "text",
+          "label": "REST API base URL",
+          "sm": 12,
+          "md": 6
+        }
+      }
+    }
+  }
+}

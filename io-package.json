@@ -1,0 +1,78 @@
+{
+  "common": {
+    "name": "sunbooster",
+    "version": "0.1.0",
+    "title": "Sunbooster POWERSTATION GRID",
+    "titleLang": {
+      "en": "Sunbooster POWERSTATION GRID",
+      "de": "Sunbooster POWERSTATION GRID"
+    },
+    "desc": {
+      "en": "Monitor and control the Sunbooster POWERSTATION GRID / GRID+ (charging and feed-in) via the vendor cloud.",
+      "de": "Überwachung und Steuerung der Sunbooster POWERSTATION GRID / GRID+ (Laden und Einspeisung) über die Hersteller-Cloud."
+    },
+    "authors": [
+      "nagelp"
+    ],
+    "keywords": [
+      "sunbooster",
+      "powerstation",
+      "battery",
+      "energy"
+    ],
+    "license": "MIT",
+    "platform": "Javascript/Node.js",
+    "main": "main.js",
+    "icon": "sunbooster.png",
+    "enabled": true,
+    "extIcon": "https://raw.githubusercontent.com/nagelp/iobroker-sunbooster-grid/main/admin/sunbooster.png",
+    "readme": "https://github.com/nagelp/iobroker-sunbooster-grid/blob/main/README.md",
+    "mode": "daemon",
+    "type": "energy",
+    "compact": true,
+    "connectionType": "cloud",
+    "dataSource": "push",
+    "adminUI": {
+      "config": "json"
+    },
+    "dependencies": [
+      {
+        "js-controller": ">=5.0.19"
+      }
+    ],
+    "messagebox": false
+  },
+  "native": {
+    "accessToken": "",
+    "refreshToken": "",
+    "accessExpiration": 0,
+    "refreshExpiration": 0,
+    "uid": "",
+    "productKey": "",
+    "deviceKey": "",
+    "wsUrl": "wss://iot-ws.quecteleu.com/ws/v1",
+    "apiBase": "https://iot-api.acceleronix.io"
+  },
+  "objects": [],
+  "instanceObjects": [
+    {
+      "_id": "info",
+      "type": "channel",
+      "common": { "name": "Information" },
+      "native": {}
+    },
+    {
+      "_id": "info.connection",
+      "type": "state",
+      "common": {
+        "role": "indicator.connected",
+        "name": "Cloud connection established",
+        "type": "boolean",
+        "read": true,
+        "write": false,
+        "def": false
+      },
+      "native": {}
+    }
+  ]
+}
