@@ -1,7 +1,7 @@
 {
   "common": {
     "name": "sunbooster",
-    "version": "0.2.0",
+    "version": "0.2.1",
     "title": "Sunbooster POWERSTATION GRID",
     "titleLang": {
       "en": "Sunbooster POWERSTATION GRID",
@@ -42,6 +42,10 @@
     ],
     "messagebox": false,
     "news": {
+      "0.2.1": {
+        "en": "Add adapter icon",
+        "de": "Adapter-Icon hinzugefügt"
+      },
       "0.2.0": {
         "en": "Live updates: periodically ask the device to push current values (configurable interval)",
         "de": "Live-Werte: Gerät wird regelmäßig zum Senden aktueller Werte aufgefordert (Intervall einstellbar)"
