@@ -2,6 +2,7 @@
 
 const { test } = require("node:test");
 const assert = require("node:assert");
+const { EventEmitter } = require("node:events");
 const { SunboosterClient, DEFAULTS } = require("../lib/client");
 
 const base = { accessToken: "Bearer a", refreshToken: "Bearer r", productKey: "pk", deviceKey: "dk" };
@@ -11,6 +12,15 @@ function stubbedClient(cfg) {
     c.calls = [];
     c.control = async (code, value) => { c.calls.push([code, value]); };
     return c;
+}
+
+function fakeWs() {
+    const ws = new EventEmitter();
+    ws.pings = 0;
+    ws.terminated = 0;
+    ws.ping = () => { ws.pings++; };
+    ws.terminate = () => { ws.terminated++; };
+    return ws;
 }
 
 test("live reports are requested on connect and every interval until stopped", (t) => {
@@ -43,3 +53,42 @@ test("missing config values fall back to defaults instead of undefined", () => {
     assert.strictEqual(c.opts.apiBase, DEFAULTS.apiBase);
     assert.strictEqual(new SunboosterClient({ ...base, liveInterval: 1 }).liveIntervalSec, 5);
 });
+
+test("heartbeat terminates a silent socket and reconnects", (t) => {
+    t.mock.timers.enable({ apis: ["setInterval"] });
+    const c = new SunboosterClient({ ...base, heartbeatMs: 30000 });
+    const ws = fakeWs();
+    let dead = 0;
+    c._installHeartbeat(ws, () => { dead++; });
+
+    // First round: still marked alive from install -> ping sent, flag cleared.
+    t.mock.timers.tick(30000);
+    assert.strictEqual(ws.pings, 1);
+    assert.strictEqual(dead, 0);
+
+    // Second round: no pong/message arrived -> terminate + reconnect callback.
+    t.mock.timers.tick(30000);
+    assert.strictEqual(ws.terminated, 1);
+    assert.strictEqual(dead, 1);
+
+    // Watchdog is cleared after firing: no further ticks act.
+    t.mock.timers.tick(90000);
+    assert.strictEqual(dead, 1);
+});
+
+test("heartbeat keeps a socket alive while pongs arrive", (t) => {
+    t.mock.timers.enable({ apis: ["setInterval"] });
+    const c = new SunboosterClient({ ...base, heartbeatMs: 30000 });
+    const ws = fakeWs();
+    let dead = 0;
+    c._installHeartbeat(ws, () => { dead++; });
+
+    for (let i = 0; i < 5; i++) {
+        t.mock.timers.tick(30000);
+        ws.emit("pong"); // server answers each ping
+    }
+    assert.strictEqual(dead, 0);
+    assert.strictEqual(ws.terminated, 0);
+    assert.strictEqual(ws.pings, 5);
+});
+

@@ -1,7 +1,7 @@
 {
   "common": {
     "name": "sunbooster",
-    "version": "0.3.0",
+    "version": "0.3.1",
     "title": "Sunbooster® Powerstation GRID/GRID+",
     "titleLang": {
       "en": "Sunbooster® Powerstation GRID/GRID+",
@@ -42,6 +42,10 @@
     ],
     "messagebox": false,
     "news": {
+      "0.3.1": {
+        "en": "Fix: detect a silently dropped cloud connection (heartbeat) and reconnect, so live values no longer freeze",
+        "de": "Fix: still abgebrochene Cloud-Verbindung per Heartbeat erkennen und neu verbinden, damit Live-Werte nicht mehr einfrieren"
+      },
       "0.3.0": {
         "en": "Tokens are now stored encrypted and no longer in the readable info.tokens state. Re-enter the tokens in the adapter settings after updating and delete info.tokens.",
         "de": "Tokens werden jetzt verschlüsselt gespeichert und nicht mehr im lesbaren Datenpunkt info.tokens. Nach dem Update die Tokens in den Adapter-Einstellungen neu eingeben und info.tokens löschen."
