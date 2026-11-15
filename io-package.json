@@ -1,15 +1,15 @@
 {
   "common": {
     "name": "sunbooster",
-    "version": "0.2.2",
-    "title": "Sunbooster POWERSTATION GRID",
+    "version": "0.2.3",
+    "title": "Sunbooster® Powerstation GRID/GRID+",
     "titleLang": {
-      "en": "Sunbooster POWERSTATION GRID",
-      "de": "Sunbooster POWERSTATION GRID"
+      "en": "Sunbooster® Powerstation GRID/GRID+",
+      "de": "Sunbooster® Powerstation GRID/GRID+"
     },
     "desc": {
-      "en": "Monitor and control the Sunbooster POWERSTATION GRID / GRID+ (charging and feed-in) via the vendor cloud.",
-      "de": "Überwachung und Steuerung der Sunbooster POWERSTATION GRID / GRID+ (Laden und Einspeisung) über die Hersteller-Cloud."
+      "en": "Monitor and control the Sunbooster® Powerstation GRID / GRID+ (charging and feed-in) via the vendor cloud.",
+      "de": "Überwachung und Steuerung der Sunbooster® Powerstation GRID / GRID+ (Laden und Einspeisung) über die Hersteller-Cloud."
     },
     "authors": [
       "nagelp"
@@ -42,9 +42,9 @@
     ],
     "messagebox": false,
     "news": {
-      "0.2.2": {
-        "en": "Transparent icon corners",
-        "de": "Transparente Icon-Ecken"
+      "0.2.3": {
+        "en": "Updated README and meta data",
+        "de": "README und Metadaten aktualisiert"
       },
       "0.2.1": {
         "en": "Add adapter icon",
