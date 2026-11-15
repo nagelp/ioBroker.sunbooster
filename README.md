@@ -88,6 +88,10 @@ npm run test:unit          # unit tests (mapping, credential extraction)
 SUNBOOSTER_CRED=/path/credentials.json npm run test:live   # live device check (sends real commands)
 ```
 
+## Credits
+
+This adapter is inspired by and started as a fork of [ha-sunbooster-grid](https://github.com/Shad0wWeaver/ha-sunbooster-grid), the Home Assistant integration by [Shad0wWeaver](https://github.com/Shad0wWeaver). The core ideas came from there: capturing the app's tokens via `adb logcat`, the cloud WebSocket for live values, the token refresh, the property names and the feed-in power encoding. Many thanks to Shad0wWeaver for figuring all of this out and sharing it!
+
 ## License
 
 MIT — see [LICENSE](LICENSE).
