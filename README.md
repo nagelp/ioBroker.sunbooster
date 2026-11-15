@@ -27,23 +27,31 @@ Sunbooster never shipped the promised API. The app talks to the Quectel/Accelero
 
 ## Obtaining the tokens (one-time)
 
-You need an Android phone with the Sunbooster app, a PC with `adb` ([platform-tools](https://developer.android.com/tools/releases/platform-tools)), and the device registered to your account.
+You need an Android phone, a PC with [`adb`](https://developer.android.com/tools/releases/platform-tools) and [Node.js](https://nodejs.org), and your POWERSTATION registered to your Sunbooster account.
 
-The current app build (V1.1.0) does **not** log the tokens. An older build (**V1.0.0**) logs the full login response, so:
+The current app (V1.1.0) doesn't log the login, but the older **V1.0.0** does:
 
-1. Download **SUNBOOSTER V1.0.0** (e.g. from APKPure/APKMirror) and install it:
-   `adb uninstall com.sunbooster.app` then `adb install v1.0.0.apk`
-2. Start capturing, then log in to the app once:
+1. Install SUNBOOSTER **V1.0.0** (e.g. from APKPure/APKMirror):
+   ```bash
+   adb uninstall com.sunbooster.app
+   adb install sunbooster-v1.0.0.apk
+   ```
+2. Capture a login:
    ```bash
    adb logcat -c
-   adb logcat | grep --line-buffered -E 'emailPwdLogin|QuecRNAPP' > login.log
+   # now log in to the app and open your POWERSTATION, wait ~10 seconds
+   adb logcat -d > login.log
    ```
-3. In `login.log`, find:
-   - the `emailPwdLogin--:` line → `data.accessToken.token`, `data.accessToken.expirationTime`, `data.refreshToken.token`, `data.refreshToken.expirationTime`
-   - the `Running "QuecRNAPP"` line → `uid`, `productKey`, `deviceKey`
-4. You may reinstall the latest app afterwards; the captured token keeps working.
+3. Extract the credentials:
+   ```bash
+   node tools/extract-credentials.js login.log
+   ```
+   Without a clone of this repo, download the single file first (it has no dependencies):
+   `curl -O https://raw.githubusercontent.com/nagelp/ioBroker.sunbooster/main/tools/extract-credentials.js`
 
-> The expiration values are **unix seconds**. Keep the `Bearer ` prefix on both tokens.
+   This writes `credentials.json` and prints the values for the adapter settings.
+
+You can reinstall the latest app afterwards; the tokens keep working.
 
 ## Installation
 
@@ -57,9 +65,9 @@ Then add an instance of `sunbooster` in the admin and configure it as below.
 
 ## Configuration
 
-In the adapter admin settings enter: access token, refresh token, both expiry timestamps, `uid`, `productKey`, `deviceKey`. The WebSocket/REST URLs default to the European zone and can be changed under *Advanced*.
+In the adapter admin settings enter the seven values printed by `extract-credentials.js`, exactly as shown (tokens include the `Bearer ` prefix). The WebSocket/REST URLs default to the European zone and can be changed under *Advanced*.
 
-The rotating tokens are stored in `sunbooster.<i>.info.tokens` and reused across restarts; the admin fields are only the initial seed.
+The rotating tokens are stored in `sunbooster.<i>.info.tokens` and reused across restarts; the admin fields are only the initial seed. Once the adapter runs, it owns the token chain: every refresh invalidates the previous refresh token, so don't use the same `credentials.json` anywhere else (it goes stale after the adapter's first refresh).
 
 ## Notes & limitations
 
@@ -72,7 +80,7 @@ The rotating tokens are stored in `sunbooster.<i>.info.tokens` and reused across
 
 ```bash
 npm install
-npm run test:unit          # pure mapping/unit tests
+npm run test:unit          # unit tests (mapping, credential extraction)
 SUNBOOSTER_CRED=/path/credentials.json npm run test:live   # live device check (sends real commands)
 ```
 
