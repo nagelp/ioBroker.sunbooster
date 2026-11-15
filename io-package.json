@@ -1,7 +1,7 @@
 {
   "common": {
     "name": "sunbooster",
-    "version": "0.2.3",
+    "version": "0.3.0",
     "title": "Sunbooster® Powerstation GRID/GRID+",
     "titleLang": {
       "en": "Sunbooster® Powerstation GRID/GRID+",
@@ -42,6 +42,10 @@
     ],
     "messagebox": false,
     "news": {
+      "0.3.0": {
+        "en": "Tokens are now stored encrypted and no longer in the readable info.tokens state. Re-enter the tokens in the adapter settings after updating and delete info.tokens.",
+        "de": "Tokens werden jetzt verschlüsselt gespeichert und nicht mehr im lesbaren Datenpunkt info.tokens. Nach dem Update die Tokens in den Adapter-Einstellungen neu eingeben und info.tokens löschen."
+      },
       "0.2.3": {
         "en": "Updated README and meta data",
         "de": "README und Metadaten aktualisiert"
