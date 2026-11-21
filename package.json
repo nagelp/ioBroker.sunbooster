@@ -39,7 +39,7 @@
     "mocha": "^11.8.0"
   },
   "scripts": {
-    "test:unit": "node --test test/unit/",
+    "test:unit": "node --test test/unit/client.test.js test/unit/extract-credentials.test.js test/unit/mapping.test.js test/unit/token-store.test.js",
     "test:live": "node test/live.js",
     "test:package": "mocha test/package --exit",
     "test:integration": "mocha test/integration --exit",
