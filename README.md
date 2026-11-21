@@ -94,6 +94,41 @@ This adapter is inspired by and started as a fork of [ha-sunbooster-grid](https:
 
 Most of the code in this repository, and much of this README, was written by an AI assistant (GitHub Copilot with Claude Fable 5.2 and Opus 5.5 model). [nagelp](https://github.com/nagelp) directed the work and tested the adapter against a real POWERSTATION GRID+.
 
+## Changelog
+
+<!--
+    Placeholder for the next version (at the beginning of the line):
+    ### **WORK IN PROGRESS**
+-->
+
+### **WORK IN PROGRESS**
+
+- (nagelp) Automated npm releases via GitHub Actions (Trusted Publishing)
+
+### 0.3.1
+
+- (nagelp) Fix: detect a silently dropped cloud connection (heartbeat) and reconnect, so live values no longer freeze
+
+### 0.3.0
+
+- (nagelp) Tokens are now stored encrypted and no longer in the readable info.tokens state. Re-enter the tokens in the adapter settings after updating and delete info.tokens.
+
+### 0.2.3
+
+- (nagelp) Updated README and meta data
+
+### 0.2.1
+
+- (nagelp) Add adapter icon
+
+### 0.2.0
+
+- (nagelp) Live updates: periodically ask the device to push current values (configurable interval)
+
+### 0.1.0
+
+- (nagelp) Initial release
+
 ## License
 
 MIT — see [LICENSE](LICENSE).
