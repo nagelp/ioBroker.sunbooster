@@ -39,7 +39,7 @@
     "mocha": "^11.8.0"
   },
   "scripts": {
-    "test:unit": "node --test test/",
+    "test:unit": "node --test test/unit/",
     "test:live": "node test/live.js",
     "test:package": "mocha test/package --exit",
     "test:integration": "mocha test/integration --exit",

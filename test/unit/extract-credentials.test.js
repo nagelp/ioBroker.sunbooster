@@ -2,7 +2,7 @@
 
 const { test } = require("node:test");
 const assert = require("node:assert");
-const { parseLog, decodeLog } = require("../tools/extract-credentials");
+const { parseLog, decodeLog } = require("../../tools/extract-credentials");
 
 const prefix = (tag) => `11-15 15:23:23.656 14241 14241 I ${tag}: `;
 

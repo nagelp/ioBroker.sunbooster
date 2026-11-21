@@ -5,7 +5,7 @@ const assert = require("node:assert");
 const fs = require("fs/promises");
 const os = require("os");
 const path = require("path");
-const { TokenStore } = require("../lib/token-store");
+const { TokenStore } = require("../../lib/token-store");
 
 const crypto = {
     encrypt: (s) => `enc:${Buffer.from(s).toString("base64")}`,

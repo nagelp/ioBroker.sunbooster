@@ -3,7 +3,7 @@
 const { test } = require("node:test");
 const assert = require("node:assert");
 const { EventEmitter } = require("node:events");
-const { SunboosterClient, DEFAULTS } = require("../lib/client");
+const { SunboosterClient, DEFAULTS } = require("../../lib/client");
 
 const base = { accessToken: "Bearer a", refreshToken: "Bearer r", productKey: "pk", deviceKey: "dk" };
 

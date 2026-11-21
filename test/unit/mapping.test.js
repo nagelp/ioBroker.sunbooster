@@ -2,7 +2,7 @@
 
 const { test } = require("node:test");
 const assert = require("node:assert");
-const m = require("../lib/mapping");
+const m = require("../../lib/mapping");
 
 test("feed watts -> device value (0=off, then 50W steps from 100W)", () => {
     assert.strictEqual(m.feedWattsToValue(0), 0);
