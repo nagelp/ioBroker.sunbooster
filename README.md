@@ -100,8 +100,7 @@ Most of the code in this repository, and much of this README, was written by an 
     Placeholder for the next version (at the beginning of the line):
     ### **WORK IN PROGRESS**
 -->
-
-### **WORK IN PROGRESS**
+### 0.3.2-alpha.0 (2026-11-21)
 
 - (nagelp) Automated npm releases via GitHub Actions (Trusted Publishing)
 

@@ -1,7 +1,7 @@
 {
   "common": {
     "name": "sunbooster",
-    "version": "0.3.1",
+    "version": "0.3.2-alpha.0",
     "title": "Sunbooster® Powerstation GRID/GRID+",
     "titleLang": {
       "en": "Sunbooster® Powerstation GRID/GRID+",
@@ -42,6 +42,19 @@
     ],
     "messagebox": false,
     "news": {
+      "0.3.2-alpha.0": {
+        "en": "Automated npm releases via GitHub Actions (Trusted Publishing)",
+        "de": "Automatisierte NPM-Releases über GitHub Actions",
+        "ru": "Автоматические релизы npm с помощью действий GitHub (надежная публикация)",
+        "pt": "Lançamentos automatizados de npm via GitHub Actions",
+        "nl": "Geautomatiseerde releases van npm via GitHub Actions (Trusted Publishing)",
+        "fr": "Publications NPM automatisées via GitHub Actions (Trusted Publishing)",
+        "it": "Rilasci automatici di npm tramite GitHub Actions",
+        "es": "Lanzamientos automatizados de npm vía GitHub Actions (Trusted Publishing)",
+        "pl": "Automatyczne wydania npm za pośrednictwem GitHub Actions (Trusted Publishing)",
+        "uk": "Автоматизовані випуски npm за допомогою дій GitHub (довірена публікація)",
+        "zh-cn": "通过 GitHub Actions（可信发布）自动发布 npm"
+      },
       "0.3.1": {
         "en": "Fix: detect a silently dropped cloud connection (heartbeat) and reconnect, so live values no longer freeze",
         "de": "Fix: still abgebrochene Cloud-Verbindung per Heartbeat erkennen und neu verbinden, damit Live-Werte nicht mehr einfrieren"

@@ -1,6 +1,6 @@
 {
   "name": "iobroker.sunbooster",
-  "version": "0.3.1",
+  "version": "0.3.2-alpha.0",
   "description": "ioBroker adapter to monitor and control the Sunbooster POWERSTATION GRID / GRID+ via the vendor cloud",
   "author": "nagelp",
   "license": "MIT",
