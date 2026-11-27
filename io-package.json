@@ -91,7 +91,9 @@
     "deviceKey": "",
     "updateInterval": 10,
     "wsUrl": "wss://iot-ws.quecteleu.com/ws/v1",
-    "apiBase": "https://iot-api.acceleronix.io"
+    "apiBase": "https://iot-api.acceleronix.io",
+    "syncClock": false,
+    "clockSyncInterval": 6
   },
   "encryptedNative": [
     "accessToken",

@@ -12,12 +12,24 @@ Tested live against a **POWERSTATION GRID+** (productKey `pe16cX`), European zon
 - **Controls** (`sunbooster.<i>.control.*`, writable):
   - `chargeMode` — AC charging: `0` off, `1` normal, `2` fast, `3` slow
   - `feedPower` — feed-in power to the house in watts: `0` (off) or `100…800` in 50 W steps
+  - `timerCharge` — charge from the grid **now** via the device's charge timer: `0` off, or `200`/`400`/`600`/`800`/`1000` W (the only way to charge with 200 W). Replaces the charge timer slots (see below)
+  - `chargeTimer` — the AC charge timer as JSON, e.g. `[{"start":"20:40","end":"23:59","power":400}]` (times on the device clock, power 200…1000 W in 200 W steps)
+  - `chargeTimerEnabled` — the timer's on/off switch (`ac_time_switch`)
   - `acOutput`, `dcOutput`, `usbOutput`, `smartFeeding`, `statusLight` — on/off switches
+- **Device clock** (option *Keep the device clock in sync*): the device runs its timers on its own clock, which drifts (~10-20 s a day) and doesn't follow daylight saving time. The adapter sets it from the host clock at start, every few hours and whenever it is more than 30 s off.
+
+### Charge timer
+
+The timer is edge-triggered on the device clock: charging starts when a slot's start minute is reached, at the slot's power, and stops at its end minute (a slot whose end is before its start runs across midnight). Turning `chargeTimerEnabled` off stops timer charging at once; turning it on only arms the timer, so charging begins at the next start minute. A changed power also only applies from the next start.
+
+`timerCharge` handles this for you: it writes one slot that starts at the next minute and runs round the clock, and enables the timer. Charging starts within 1-2 minutes and ramps up in about 40 s. `0` switches the timer off.
+
+The timer can only be written over the cloud WebSocket (as the app does); the REST control API accepts it, but the device ignores it.
 
 ### Switching between feed-in and charging
 
-- **Charge from AC** (e.g. from fuel-cell / PV surplus): set `control.feedPower = 0`, then `control.chargeMode = 3` (slow). Watch `device.charge_mode_power_hm` for the actual draw. Note: the device will not charge when the battery is already full.
-- **Feed the house**: set `control.chargeMode = 0`, then `control.feedPower = 200` (or your target, 50 W steps).
+- **Charge from AC** (e.g. from fuel-cell / PV surplus): set `control.feedPower = 0`, then `control.timerCharge = 200` (or `400`…`1000`), or `control.chargeMode = 3` (slow, ~400 W). Watch `device.charge_mode_power_hm` for the actual draw. Note: the device will not charge when the battery is already full.
+- **Feed the house**: set `control.timerCharge = 0` and `control.chargeMode = 0`, then `control.feedPower = 200` (or your target, 50 W steps).
 
 Deciding *when* to switch is up to you (scripts, Tibber price, fuel-cell output, …).
 
@@ -100,6 +112,11 @@ Most of the code in this repository, and much of this README, was written by an 
     Placeholder for the next version (at the beginning of the line):
     ### **WORK IN PROGRESS**
 -->
+### **WORK IN PROGRESS**
+
+- (nagelp) New: charge timer controls `timerCharge` (charge now with 200-1000 W, e.g. 200 W), `chargeTimer` (timer slots as JSON) and `chargeTimerEnabled`
+- (nagelp) New: option to keep the device clock in sync (at start, every few hours and when it drifts by more than 30 s)
+
 ### 0.3.2-alpha.0 (2026-11-21)
 
 - (nagelp) Automated npm releases via GitHub Actions (Trusted Publishing)

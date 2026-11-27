@@ -88,6 +88,24 @@
           "label": "REST API base URL",
           "sm": 12,
           "md": 6
+        },
+        "syncClock": {
+          "type": "checkbox",
+          "label": "Keep the device clock in sync",
+          "newLine": true,
+          "sm": 12,
+          "md": 12,
+          "help": "The device runs its charge and feed-in timers on its own clock, which drifts and doesn't follow daylight saving time. Set it from this host's clock (local time zone) when the adapter starts, every few hours (below), and whenever it is more than 30 s off (at most every 10 minutes)."
+        },
+        "clockSyncInterval": {
+          "type": "number",
+          "label": "Set the device clock every (hours)",
+          "min": 0,
+          "max": 168,
+          "sm": 12,
+          "md": 4,
+          "hidden": "!data.syncClock",
+          "help": "0 = only when it is more than 30 s off. The clock drifts by about 10-20 s a day."
         }
       }
     }
