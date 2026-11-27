@@ -1,7 +1,7 @@
 {
   "common": {
     "name": "sunbooster",
-    "version": "0.4.0",
+    "version": "0.5.0",
     "titleLang": {
       "en": "Sunbooster® Powerstation GRID/GRID+",
       "de": "Sunbooster® Powerstation GRID/GRID+",
@@ -67,6 +67,19 @@
     ],
     "messagebox": false,
     "news": {
+      "0.5.0": {
+        "en": "Requires Node.js >= 22, js-controller >= 6.0.11 and admin >= 7.6.20\nAdmin settings translated; the adapter's timers are cleaned up by ioBroker on stop, and stopping no longer waits out a reconnect delay\nMaintenance: fixes for the ioBroker repository checker (metadata, dependencies, tests on Node.js 22-26), code linted with the ioBroker ESLint config",
+        "de": "Benötigt Node.js >= 22, js-controller >= 6.0.11 und admin >= 7.6.20\nAdmin-Einstellungen wurden übersetzt; ioBroker bereinigt die Timer des Adapters beim Stoppen nicht mehr\nWartung: Fixes für den ioBroker Repository-Checker (Metadaten, Abhängigkeiten, Tests auf Node.js 22-26), Code mit IOBroker ESLint-Config",
+        "ru": "Требуется файл Node.js >= 22, js-контроллер >= 6.0.11 и администратор >= 7.6.20\nНастройки администратора переведены; таймеры адаптера очищаются IOBroker при остановке, а остановка больше не дожидается задержки повторного подключения\nТехническое обслуживание: исправления для средства проверки репозитория IOBroker (метаданные, зависимости, тесты на Node.js 22-26), код, привязанный к конфигурации IOBroker ESLint",
+        "pt": "Requer Node.js >= 22, js-controller >= 6.0.11 e admin >= 7.6.20\nConfigurações de administrador traduzidas; o IOBroker limpa os timers do adaptador ao parar e não demora mais na reconexão\nManutenção: correções para o IOBroker (metadados, dependências, testes no Node.js 22-26), código com a configuração IOBroker ESLint",
+        "nl": "Vereist Node.js >= 22, js-controller >= 6.0.11 en admin >= 7.6.20\nDe beheerdersinstellingen zijn vertaald; de timers van de adapter worden door IOBroker automatisch opgeschoond, en stoppen hoeft niet langer te wachten op een vertraging bij het opnieuw verbinden\nOnderhoud: correcties voor de IOBroker repository checker (metagegevens, afhankelijkheden, tests op Node.js 22-26), code gekoppeld aan de IOBroker ESLint-configuratie",
+        "fr": "Nécessite Node.js >= 22, js-controller >= 6.0.11 et admin >= 7.6.20\nParamètres d'administration traduits ; IObroker nettoie les minuteries de l'adaptateur à l'arrêt, et il n'y a plus de délai de reconnexion\nMaintenance : correctifs pour le vérificateur de dépôts IOBroker (métadonnées, dépendances, tests sur Node.js 22-26), code lié à la configuration IOBroker ESLint",
+        "it": "Richiede Node.js =2, js-controller >= 6.0.11 e admin >= 7.6.20\nImpostazioni admin tradotte; i timer dell'adattatore vengono ripuliti da IOBroker e l'arresto non richiede più ritardi\nManutenzione: correzioni per IOBroker Repository Checker (metadati, dipendenze, test su Node.js 22-26), codice con la configurazione ESLint",
+        "es": "Requiere Node.js >= 22, js-controller >= 6.0.11 y admin >= 7.6.20\nAjustes de administración traducidos; ioBroker limpia los temporizadores del adaptador al parar y detener ya no espera a que pase un retraso de reconexión\nMantenimiento: correcciones para el comprobador de repositorios de IOBroker (metadatos, dependencias, pruebas en Node.js 22-26), código enlazado con la configuración de ESLint de IOBroker",
+        "pl": "Wymaga Node.js >= 22, js-controller >= 6.0.11 i admin >= 7.6.20\nPrzetłumaczone ustawienia administratora; timery adaptera są czyszczone przez iOBroker po zatrzymaniu, a zatrzymanie przestaje czekać na opóźnienie ponownego połączenia\nKonserwacja: poprawki do sprawdzania repozytorium ioBroker (metadane, zależności, testy na Node.js 22-26), kod połączony z konfiguracją iOBroker eSlint",
+        "uk": "Потрібен Node.js >= 22, js-контролер >= 6.0.11 і адміністратор> = 7.6.20\nНалаштування адміністратора переведено; таймери адаптера очищаються IObroker при зупинці, а зупинка більше не очікує затримки повторного підключення\nТехнічне обслуговування: виправлення для перевірки сховища IObroker (метадані, залежності, тести на Node.js 22-26), код, пов'язаний з конфігурацією IObroker ESLint",
+        "zh-cn": "需要 Node.js >= 22、js-controller >= 6.0.11 和管理员 >= 7.6.20\n管理员设置已翻译；IOBroker 在停止时会清理适配器的计时器，停止时不再等待重新连接延迟\n维护：修复了 ioBroker 存储库检查器（元数据、依赖关系、对 Node.js 22-26 的测试），代码中包含 IOBroker ESLint 配置的代码"
+      },
       "0.4.0": {
         "en": "New: charge timer controls `timerCharge` (charge now with 200-1000 W, e.g. 200 W), `chargeTimer` (timer slots as JSON) and `chargeTimerEnabled`\nNew: option to keep the device clock in sync (at start, every few hours and when it drifts by more than 30 s)",
         "de": "Neu: Der Ladetimer steuert TimerCharge (jetzt mit 200-1000 W, z. B. 200 W), ChargeTimer (Timer-Slots als JSON) und ChargeTimerEnabled\nNeu: Option zum Synchronisieren der Geräteuhr (am Anfang, alle paar Stunden und bei mehr als 30 s)",

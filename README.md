@@ -112,7 +112,7 @@ Most of the code in this repository, and much of this README, was written by an 
     Placeholder for the next version (at the beginning of the line):
     ### **WORK IN PROGRESS**
 -->
-### **WORK IN PROGRESS**
+### 0.5.0 (2026-11-27)
 
 - (nagelp) Requires Node.js >= 22, js-controller >= 6.0.11 and admin >= 7.6.20
 - (nagelp) Admin settings translated; the adapter's timers are cleaned up by ioBroker on stop, and stopping no longer waits out a reconnect delay
@@ -130,6 +130,10 @@ Most of the code in this repository, and much of this README, was written by an 
 ### 0.3.1
 
 - (nagelp) Fix: detect a silently dropped cloud connection (heartbeat) and reconnect, so live values no longer freeze
+
+### 0.3.0
+
+- (nagelp) Tokens are now stored encrypted and no longer in the readable info.tokens state. Re-enter the tokens in the adapter settings after updating and delete info.tokens.
 
 Older changes: [CHANGELOG_OLD.md](CHANGELOG_OLD.md)
 
