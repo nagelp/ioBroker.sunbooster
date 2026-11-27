@@ -1,0 +1,21 @@
+{
+    "Device & tokens": "Пристрій і токени",
+    "Enter the values printed by tools/extract-credentials.js (see the README for how to capture a login). Tokens rotate automatically; the refresh token is valid ~30 days.": "Введіть значення, які виводить tools/extract-credentials.js (як записати вхід у застосунок, описано в README). Токени оновлюються автоматично; refresh-токен дійсний ~30 днів.",
+    "Access token": "Access-токен",
+    "Full value starting with 'Bearer '": "Повне значення, що починається з 'Bearer '",
+    "Refresh token": "Refresh-токен",
+    "Access token expiry (unix seconds)": "Термін дії access-токена (Unix-секунди)",
+    "Refresh token expiry (unix seconds)": "Термін дії refresh-токена (Unix-секунди)",
+    "User id (uid)": "ID користувача (uid)",
+    "Product key": "Ключ продукту",
+    "Device key": "Ключ пристрою",
+    "Advanced": "Додатково",
+    "Live update interval (seconds)": "Інтервал живих оновлень (секунди)",
+    "Every N seconds the adapter asks the device to push live values, as the app does while it is open. 0 disables it (values then only update when the device reports on its own). Minimum 5.": "Кожні N секунд адаптер просить пристрій надсилати поточні значення, як це робить відкритий застосунок. 0 вимикає це (тоді значення оновлюються, лише коли пристрій повідомляє їх сам). Мінімум 5.",
+    "WebSocket URL": "URL WebSocket",
+    "REST API base URL": "Базовий URL REST API",
+    "Keep the device clock in sync": "Синхронізувати годинник пристрою",
+    "The device runs its charge and feed-in timers on its own clock, which drifts and doesn't follow daylight saving time. Set it from this host's clock (local time zone) when the adapter starts, every few hours (below), and whenever it is more than 30 s off (at most every 10 minutes).": "Пристрій виконує таймери заряджання та подачі в мережу за власним годинником, який відхиляється і не переходить на літній час. Адаптер виставляє його за годинником цього хоста (місцевий часовий пояс): під час запуску, кожні кілька годин (нижче) і коли розбіжність перевищує 30 с (не частіше ніж раз на 10 хвилин).",
+    "Set the device clock every (hours)": "Виставляти годинник пристрою кожні (годин)",
+    "0 = only when it is more than 30 s off. The clock drifts by about 10-20 s a day.": "0 = лише коли розбіжність перевищує 30 с. Годинник відхиляється приблизно на 10-20 с на добу."
+}

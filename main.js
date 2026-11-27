@@ -62,6 +62,13 @@ class Sunbooster extends utils.Adapter {
                 liveInterval: cfg.updateInterval,
             },
             this.log,
+            {
+                // The adapter's timers: js-controller clears them on unload.
+                setTimeout: (fn, ms) => this.setTimeout(fn, ms),
+                clearTimeout: (t) => this.clearTimeout(t),
+                setInterval: (fn, ms) => this.setInterval(fn, ms),
+                clearInterval: (t) => this.clearInterval(t),
+            },
         );
 
         let clockSyncedOnce = false;
@@ -92,7 +99,7 @@ class Sunbooster extends utils.Adapter {
             const hours = Number(cfg.clockSyncInterval);
             const every = Number.isFinite(hours) && hours > 0 ? Math.max(hours, 0.25) : 0;
             if (every) {
-                this._clockTimer = setInterval(() => this._syncClock("periodic"), every * 3600e3);
+                this._clockTimer = this.setInterval(() => this._syncClock("periodic"), every * 3600e3);
                 this.log.info(`Setting the device clock every ${every} h (and whenever it is off by more than ${CLOCK_TOLERANCE_S} s)`);
             }
         }
@@ -112,7 +119,7 @@ class Sunbooster extends utils.Adapter {
         this._lastClockSync = Date.now();
         const sec = new Date().getSeconds() + new Date().getMilliseconds() / 1000;
         const waitS = (CLOCK_SET_AT_SECOND - sec + 60) % 60;
-        this._clockPending = setTimeout(() => {
+        this._clockPending = this.setTimeout(() => {
             this._clockPending = null;
             this._lastClockSync = Date.now();
             const target = clock.formatLocal(new Date(Date.now() + 1000)); // the command takes about a second
@@ -311,8 +318,8 @@ class Sunbooster extends utils.Adapter {
 
     async onUnload(callback) {
         try {
-            if (this._clockTimer) clearInterval(this._clockTimer);
-            if (this._clockPending) clearTimeout(this._clockPending);
+            if (this._clockTimer) this.clearInterval(this._clockTimer);
+            if (this._clockPending) this.clearTimeout(this._clockPending);
             if (this.client) await this.client.stop();
             this.setState("info.connection", false, true);
         } catch { /* ignore */ } finally {

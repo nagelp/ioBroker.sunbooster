@@ -1,0 +1,21 @@
+{
+    "Device & tokens": "Appareil et jetons",
+    "Enter the values printed by tools/extract-credentials.js (see the README for how to capture a login). Tokens rotate automatically; the refresh token is valid ~30 days.": "Saisissez les valeurs affichées par tools/extract-credentials.js (le README explique comment capturer une connexion). Les jetons sont renouvelés automatiquement ; le jeton de rafraîchissement est valable ~30 jours.",
+    "Access token": "Jeton d'accès",
+    "Full value starting with 'Bearer '": "Valeur complète, commençant par 'Bearer '",
+    "Refresh token": "Jeton de rafraîchissement",
+    "Access token expiry (unix seconds)": "Expiration du jeton d'accès (secondes Unix)",
+    "Refresh token expiry (unix seconds)": "Expiration du jeton de rafraîchissement (secondes Unix)",
+    "User id (uid)": "ID utilisateur (uid)",
+    "Product key": "Clé produit",
+    "Device key": "Clé de l'appareil",
+    "Advanced": "Avancé",
+    "Live update interval (seconds)": "Intervalle de mise à jour en direct (secondes)",
+    "Every N seconds the adapter asks the device to push live values, as the app does while it is open. 0 disables it (values then only update when the device reports on its own). Minimum 5.": "Toutes les N secondes, l'adaptateur demande à l'appareil d'envoyer ses valeurs en direct, comme le fait l'application tant qu'elle est ouverte. 0 désactive cette fonction (les valeurs ne changent alors que lorsque l'appareil les signale de lui-même). Minimum 5.",
+    "WebSocket URL": "URL WebSocket",
+    "REST API base URL": "URL de base de l'API REST",
+    "Keep the device clock in sync": "Garder l'horloge de l'appareil à l'heure",
+    "The device runs its charge and feed-in timers on its own clock, which drifts and doesn't follow daylight saving time. Set it from this host's clock (local time zone) when the adapter starts, every few hours (below), and whenever it is more than 30 s off (at most every 10 minutes).": "L'appareil exécute ses minuteries de charge et d'injection selon sa propre horloge, qui dérive et ne passe pas à l'heure d'été. Elle est réglée sur l'horloge de cet hôte (fuseau horaire local) au démarrage de l'adaptateur, toutes les quelques heures (ci-dessous) et dès qu'elle s'écarte de plus de 30 s (au plus toutes les 10 minutes).",
+    "Set the device clock every (hours)": "Régler l'horloge de l'appareil toutes les (heures)",
+    "0 = only when it is more than 30 s off. The clock drifts by about 10-20 s a day.": "0 = seulement si elle s'écarte de plus de 30 s. L'horloge dérive d'environ 10-20 s par jour."
+}

@@ -1,0 +1,21 @@
+{
+    "Device & tokens": "设备与令牌",
+    "Enter the values printed by tools/extract-credentials.js (see the README for how to capture a login). Tokens rotate automatically; the refresh token is valid ~30 days.": "输入 tools/extract-credentials.js 输出的值（如何抓取登录请参阅 README）。令牌会自动轮换；刷新令牌有效期约 30 天。",
+    "Access token": "访问令牌",
+    "Full value starting with 'Bearer '": "完整值，以 'Bearer ' 开头",
+    "Refresh token": "刷新令牌",
+    "Access token expiry (unix seconds)": "访问令牌到期时间（Unix 秒）",
+    "Refresh token expiry (unix seconds)": "刷新令牌到期时间（Unix 秒）",
+    "User id (uid)": "用户 ID（uid）",
+    "Product key": "产品密钥",
+    "Device key": "设备密钥",
+    "Advanced": "高级",
+    "Live update interval (seconds)": "实时更新间隔（秒）",
+    "Every N seconds the adapter asks the device to push live values, as the app does while it is open. 0 disables it (values then only update when the device reports on its own). Minimum 5.": "适配器每 N 秒请求设备推送实时数值，就像应用打开时那样。0 表示关闭（数值仅在设备主动上报时更新）。最小值 5。",
+    "WebSocket URL": "WebSocket URL",
+    "REST API base URL": "REST API 基础 URL",
+    "Keep the device clock in sync": "保持设备时钟同步",
+    "The device runs its charge and feed-in timers on its own clock, which drifts and doesn't follow daylight saving time. Set it from this host's clock (local time zone) when the adapter starts, every few hours (below), and whenever it is more than 30 s off (at most every 10 minutes).": "设备按自身时钟运行充电和馈电定时器，该时钟会漂移且不随夏令时调整。适配器会按本主机时钟（本地时区）校准：在适配器启动时、每隔几小时（见下方）以及偏差超过 30 秒时（最多每 10 分钟一次）。",
+    "Set the device clock every (hours)": "每隔（小时）校准设备时钟",
+    "0 = only when it is more than 30 s off. The clock drifts by about 10-20 s a day.": "0 = 仅在偏差超过 30 秒时。时钟每天漂移约 10-20 秒。"
+}

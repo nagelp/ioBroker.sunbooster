@@ -10,9 +10,9 @@
  *   node test/live.js --feed 200      # also set feed-in to 200 W, then back to 0
  */
 
-const fs = require("fs");
-const os = require("os");
-const path = require("path");
+const fs = require("node:fs");
+const os = require("node:os");
+const path = require("node:path");
 const { SunboosterClient } = require("../lib/client");
 const mapping = require("../lib/mapping");
 

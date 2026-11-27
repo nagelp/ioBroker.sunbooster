@@ -112,6 +112,12 @@ Most of the code in this repository, and much of this README, was written by an 
     Placeholder for the next version (at the beginning of the line):
     ### **WORK IN PROGRESS**
 -->
+### **WORK IN PROGRESS**
+
+- (nagelp) Requires Node.js >= 22, js-controller >= 6.0.11 and admin >= 7.6.20
+- (nagelp) Admin settings translated; the adapter's timers are cleaned up by ioBroker on stop, and stopping no longer waits out a reconnect delay
+- (nagelp) Maintenance: fixes for the ioBroker repository checker (metadata, dependencies, tests on Node.js 22-26)
+
 ### 0.4.0 (2026-11-27)
 
 - (nagelp) New: charge timer controls `timerCharge` (charge now with 200-1000 W, e.g. 200 W), `chargeTimer` (timer slots as JSON) and `chargeTimerEnabled`
@@ -147,4 +153,9 @@ Most of the code in this repository, and much of this README, was written by an 
 
 ## License
 
-MIT — see [LICENSE](LICENSE).
+MIT License
+
+Copyright (c) 2026 nagelp <622489+nagelp@users.noreply.github.com>  
+Copyright (c) 2026 Shad0wWeaver
+
+See [LICENSE](LICENSE) for the full text.

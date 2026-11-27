@@ -2,27 +2,46 @@
   "common": {
     "name": "sunbooster",
     "version": "0.4.0",
-    "title": "Sunbooster® Powerstation GRID/GRID+",
     "titleLang": {
       "en": "Sunbooster® Powerstation GRID/GRID+",
-      "de": "Sunbooster® Powerstation GRID/GRID+"
+      "de": "Sunbooster® Powerstation GRID/GRID+",
+      "ru": "Sunbooster® Powerstation GRID/GRID+",
+      "pt": "Sunbooster® Powerstation GRID/GRID+",
+      "nl": "Sunbooster® Powerstation GRID/GRID+",
+      "fr": "Sunbooster® Powerstation GRID/GRID+",
+      "it": "Sunbooster® Powerstation GRID/GRID+",
+      "es": "Sunbooster® Powerstation GRID/GRID+",
+      "pl": "Sunbooster® Powerstation GRID/GRID+",
+      "uk": "Sunbooster® Powerstation GRID/GRID+",
+      "zh-cn": "Sunbooster® Powerstation GRID/GRID+"
     },
     "desc": {
       "en": "Monitor and control the Sunbooster® Powerstation GRID / GRID+ (charging and feed-in) via the vendor cloud.",
-      "de": "Überwachung und Steuerung der Sunbooster® Powerstation GRID / GRID+ (Laden und Einspeisung) über die Hersteller-Cloud."
+      "de": "Überwachung und Steuerung der Sunbooster® Powerstation GRID / GRID+ (Laden und Einspeisung) über die Hersteller-Cloud.",
+      "ru": "Мониторинг и управление Sunbooster® Powerstation GRID / GRID+ (зарядка и подача в сеть) через облако производителя.",
+      "pt": "Monitorizar e controlar a Sunbooster® Powerstation GRID / GRID+ (carregamento e injeção na rede) através da cloud do fabricante.",
+      "nl": "Bewaak en bedien de Sunbooster® Powerstation GRID / GRID+ (laden en teruglevering) via de cloud van de fabrikant.",
+      "fr": "Surveiller et piloter la Sunbooster® Powerstation GRID / GRID+ (charge et injection) via le cloud du fabricant.",
+      "it": "Monitorare e controllare la Sunbooster® Powerstation GRID / GRID+ (carica e immissione in rete) tramite il cloud del produttore.",
+      "es": "Supervisar y controlar la Sunbooster® Powerstation GRID / GRID+ (carga e inyección a la red) a través de la nube del fabricante.",
+      "pl": "Monitorowanie i sterowanie Sunbooster® Powerstation GRID / GRID+ (ładowanie i oddawanie energii) przez chmurę producenta.",
+      "uk": "Моніторинг і керування Sunbooster® Powerstation GRID / GRID+ (заряджання та подача в мережу) через хмару виробника.",
+      "zh-cn": "通过厂商云监控和控制 Sunbooster® Powerstation GRID / GRID+（充电和馈电）。"
     },
     "authors": [
-      "nagelp"
+      "nagelp <622489+nagelp@users.noreply.github.com>"
     ],
+    "licenseInformation": {
+      "type": "free",
+      "license": "MIT"
+    },
     "keywords": [
       "sunbooster",
       "powerstation",
       "battery",
       "energy"
     ],
-    "license": "MIT",
     "platform": "Javascript/Node.js",
-    "main": "main.js",
     "icon": "sunbooster.png",
     "enabled": true,
     "extIcon": "https://raw.githubusercontent.com/nagelp/ioBroker.sunbooster/main/admin/sunbooster.png",
@@ -32,12 +51,18 @@
     "compact": true,
     "connectionType": "cloud",
     "dataSource": "push",
+    "tier": 2,
     "adminUI": {
       "config": "json"
     },
     "dependencies": [
       {
-        "js-controller": ">=5.0.19"
+        "js-controller": ">=6.0.11"
+      }
+    ],
+    "globalDependencies": [
+      {
+        "admin": ">=7.6.20"
       }
     ],
     "messagebox": false,
@@ -70,23 +95,16 @@
       },
       "0.3.1": {
         "en": "Fix: detect a silently dropped cloud connection (heartbeat) and reconnect, so live values no longer freeze",
-        "de": "Fix: still abgebrochene Cloud-Verbindung per Heartbeat erkennen und neu verbinden, damit Live-Werte nicht mehr einfrieren"
-      },
-      "0.3.0": {
-        "en": "Tokens are now stored encrypted and no longer in the readable info.tokens state. Re-enter the tokens in the adapter settings after updating and delete info.tokens.",
-        "de": "Tokens werden jetzt verschlüsselt gespeichert und nicht mehr im lesbaren Datenpunkt info.tokens. Nach dem Update die Tokens in den Adapter-Einstellungen neu eingeben und info.tokens löschen."
-      },
-      "0.2.3": {
-        "en": "Updated README and meta data",
-        "de": "README und Metadaten aktualisiert"
-      },
-      "0.2.1": {
-        "en": "Add adapter icon",
-        "de": "Adapter-Icon hinzugefügt"
-      },
-      "0.2.0": {
-        "en": "Live updates: periodically ask the device to push current values (configurable interval)",
-        "de": "Live-Werte: Gerät wird regelmäßig zum Senden aktueller Werte aufgefordert (Intervall einstellbar)"
+        "de": "Fix: still abgebrochene Cloud-Verbindung per Heartbeat erkennen und neu verbinden, damit Live-Werte nicht mehr einfrieren",
+        "ru": "Исправление: обнаруживать незаметно оборвавшееся облачное соединение (heartbeat) и переподключаться, чтобы живые значения больше не замирали",
+        "pt": "Correção: detetar uma ligação à cloud interrompida silenciosamente (heartbeat) e voltar a ligar, para que os valores ao vivo deixem de congelar",
+        "nl": "Fix: een stil verbroken cloudverbinding detecteren (heartbeat) en opnieuw verbinden, zodat live-waarden niet meer bevriezen",
+        "fr": "Correctif : détecter une connexion cloud coupée silencieusement (heartbeat) et se reconnecter, afin que les valeurs en direct ne se figent plus",
+        "it": "Correzione: rilevare una connessione cloud interrotta silenziosamente (heartbeat) e riconnettersi, così i valori live non si bloccano più",
+        "es": "Corrección: detectar una conexión a la nube caída silenciosamente (heartbeat) y reconectar, para que los valores en vivo ya no se congelen",
+        "pl": "Poprawka: wykrywanie po cichu zerwanego połączenia z chmurą (heartbeat) i ponowne łączenie, aby wartości na żywo już nie zamarzały",
+        "uk": "Виправлення: виявляти непомітно розірване хмарне з'єднання (heartbeat) і перепідключатися, щоб живі значення більше не завмирали",
+        "zh-cn": "修复：通过心跳检测静默断开的云连接并重新连接，实时数值不再冻结"
       }
     }
   },

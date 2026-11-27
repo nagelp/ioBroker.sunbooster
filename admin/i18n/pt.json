@@ -1,0 +1,21 @@
+{
+    "Device & tokens": "Dispositivo e tokens",
+    "Enter the values printed by tools/extract-credentials.js (see the README for how to capture a login). Tokens rotate automatically; the refresh token is valid ~30 days.": "Introduza os valores mostrados por tools/extract-credentials.js (o README explica como capturar um login). Os tokens são renovados automaticamente; o refresh token é válido ~30 dias.",
+    "Access token": "Token de acesso",
+    "Full value starting with 'Bearer '": "Valor completo, começando por 'Bearer '",
+    "Refresh token": "Refresh token",
+    "Access token expiry (unix seconds)": "Expiração do token de acesso (segundos Unix)",
+    "Refresh token expiry (unix seconds)": "Expiração do refresh token (segundos Unix)",
+    "User id (uid)": "ID do utilizador (uid)",
+    "Product key": "Chave do produto",
+    "Device key": "Chave do dispositivo",
+    "Advanced": "Avançado",
+    "Live update interval (seconds)": "Intervalo de atualização ao vivo (segundos)",
+    "Every N seconds the adapter asks the device to push live values, as the app does while it is open. 0 disables it (values then only update when the device reports on its own). Minimum 5.": "A cada N segundos o adaptador pede ao dispositivo que envie valores ao vivo, como a app faz enquanto está aberta. 0 desativa (os valores só mudam quando o dispositivo os comunica por si). Mínimo 5.",
+    "WebSocket URL": "URL do WebSocket",
+    "REST API base URL": "URL base da API REST",
+    "Keep the device clock in sync": "Manter o relógio do dispositivo sincronizado",
+    "The device runs its charge and feed-in timers on its own clock, which drifts and doesn't follow daylight saving time. Set it from this host's clock (local time zone) when the adapter starts, every few hours (below), and whenever it is more than 30 s off (at most every 10 minutes).": "O dispositivo executa os temporizadores de carga e injeção segundo o seu próprio relógio, que se desvia e não muda para a hora de verão. É acertado pelo relógio deste host (fuso horário local) ao iniciar o adaptador, a cada poucas horas (abaixo) e sempre que se desvia mais de 30 s (no máximo a cada 10 minutos).",
+    "Set the device clock every (hours)": "Acertar o relógio do dispositivo a cada (horas)",
+    "0 = only when it is more than 30 s off. The clock drifts by about 10-20 s a day.": "0 = só quando se desvia mais de 30 s. O relógio desvia-se cerca de 10-20 s por dia."
+}

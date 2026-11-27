@@ -2,9 +2,9 @@
 
 const { test } = require("node:test");
 const assert = require("node:assert");
-const fs = require("fs/promises");
-const os = require("os");
-const path = require("path");
+const fs = require("node:fs/promises");
+const os = require("node:os");
+const path = require("node:path");
 const { TokenStore } = require("../../lib/token-store");
 
 const crypto = {

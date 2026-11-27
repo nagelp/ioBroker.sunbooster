@@ -13,8 +13,8 @@
  * No dependencies; only Node.js built-ins.
  */
 
-const fs = require("fs");
-const path = require("path");
+const fs = require("node:fs");
+const path = require("node:path");
 
 const LOGIN_MARKER = "emailPwdLogin--:";
 const RN_MARKER = 'Running "QuecRNAPP" with ';

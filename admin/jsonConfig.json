@@ -10,55 +10,80 @@
           "type": "staticText",
           "newLine": true,
           "text": "Enter the values printed by tools/extract-credentials.js (see the README for how to capture a login). Tokens rotate automatically; the refresh token is valid ~30 days.",
-          "sm": 12
+          "xs": 12,
+          "sm": 12,
+          "md": 12,
+          "lg": 12,
+          "xl": 12
         },
         "accessToken": {
           "type": "text",
           "label": "Access token",
           "help": "Full value starting with 'Bearer '",
           "newLine": true,
+          "xs": 12,
           "sm": 12,
-          "md": 12
+          "md": 12,
+          "lg": 12,
+          "xl": 12
         },
         "refreshToken": {
           "type": "text",
           "label": "Refresh token",
           "help": "Full value starting with 'Bearer '",
           "newLine": true,
+          "xs": 12,
           "sm": 12,
-          "md": 12
+          "md": 12,
+          "lg": 12,
+          "xl": 12
         },
         "accessExpiration": {
           "type": "number",
           "label": "Access token expiry (unix seconds)",
           "newLine": true,
+          "xs": 12,
           "sm": 12,
-          "md": 6
+          "md": 6,
+          "lg": 6,
+          "xl": 6
         },
         "refreshExpiration": {
           "type": "number",
           "label": "Refresh token expiry (unix seconds)",
+          "xs": 12,
           "sm": 12,
-          "md": 6
+          "md": 6,
+          "lg": 6,
+          "xl": 6
         },
         "uid": {
           "type": "text",
           "label": "User id (uid)",
           "newLine": true,
+          "xs": 12,
           "sm": 12,
-          "md": 4
+          "md": 4,
+          "lg": 4,
+          "xl": 4
         },
         "productKey": {
           "type": "text",
           "label": "Product key",
+          "xs": 12,
           "sm": 12,
-          "md": 4
+          "md": 4,
+          "lg": 4,
+          "xl": 4
         },
         "deviceKey": {
           "type": "text",
           "label": "Device key",
+          "xs": 12,
           "sm": 12,
-          "md": 4
+          "md": 4,
+          "lg": 4,
+          "xl": 4
         }
       }
     },
@@ -73,39 +98,54 @@
           "min": 0,
           "max": 3600,
           "newLine": true,
+          "xs": 12,
           "sm": 12,
-          "md": 6
+          "md": 6,
+          "lg": 6,
+          "xl": 6
         },
         "wsUrl": {
           "type": "text",
           "label": "WebSocket URL",
           "newLine": true,
+          "xs": 12,
           "sm": 12,
-          "md": 6
+          "md": 6,
+          "lg": 6,
+          "xl": 6
         },
         "apiBase": {
           "type": "text",
           "label": "REST API base URL",
+          "xs": 12,
           "sm": 12,
-          "md": 6
+          "md": 6,
+          "lg": 6,
+          "xl": 6
         },
         "syncClock": {
           "type": "checkbox",
           "label": "Keep the device clock in sync",
           "newLine": true,
+          "help": "The device runs its charge and feed-in timers on its own clock, which drifts and doesn't follow daylight saving time. Set it from this host's clock (local time zone) when the adapter starts, every few hours (below), and whenever it is more than 30 s off (at most every 10 minutes).",
+          "xs": 12,
           "sm": 12,
           "md": 12,
-          "help": "The device runs its charge and feed-in timers on its own clock, which drifts and doesn't follow daylight saving time. Set it from this host's clock (local time zone) when the adapter starts, every few hours (below), and whenever it is more than 30 s off (at most every 10 minutes)."
+          "lg": 12,
+          "xl": 12
         },
         "clockSyncInterval": {
           "type": "number",
           "label": "Set the device clock every (hours)",
           "min": 0,
           "max": 168,
+          "hidden": "!data.syncClock",
+          "help": "0 = only when it is more than 30 s off. The clock drifts by about 10-20 s a day.",
+          "xs": 12,
           "sm": 12,
           "md": 4,
-          "hidden": "!data.syncClock",
-          "help": "0 = only when it is more than 30 s off. The clock drifts by about 10-20 s a day."
+          "lg": 4,
+          "xl": 4
         }
       }
     }

@@ -92,3 +92,33 @@ test("heartbeat keeps a socket alive while pongs arrive", (t) => {
     assert.strictEqual(ws.pings, 5);
 });
 
+
+test("stop() wakes a running reconnect backoff instead of waiting it out", async () => {
+    const c = new SunboosterClient(base);
+    let attempts = 0;
+    c.ensureValidToken = async () => {};
+    c._connectOnce = async () => { attempts++; throw new Error("offline"); };
+    c.on("error", () => {});
+    c.opts.reconnectMinMs = 3600e3; // an hour
+    await c.start();
+    await new Promise((r) => setImmediate(r));
+    const t0 = Date.now();
+    await c.stop();
+    assert.ok(Date.now() - t0 < 1000);
+    assert.strictEqual(attempts, 1);
+});
+
+test("injected timers are used, and a missing timer (adapter shutting down) doesn't block", async () => {
+    const used = [];
+    const timers = {
+        setTimeout: (fn, ms) => { used.push(["setTimeout", ms]); return undefined; }, // like adapter.setTimeout during stop
+        clearTimeout: () => used.push(["clearTimeout"]),
+        setInterval: (fn, ms) => { used.push(["setInterval", ms]); return 1; },
+        clearInterval: () => used.push(["clearInterval"]),
+    };
+    const c = new SunboosterClient(base, undefined, timers);
+    await c._sleep(5000); // resolves at once
+    c._installHeartbeat(fakeWs(), () => {});
+    c._clearHeartbeat();
+    assert.deepStrictEqual(used, [["setTimeout", 5000], ["setInterval", DEFAULTS.heartbeatMs], ["clearInterval"]]);
+});

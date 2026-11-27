@@ -2,10 +2,13 @@
   "name": "iobroker.sunbooster",
   "version": "0.4.0",
   "description": "ioBroker adapter to monitor and control the Sunbooster POWERSTATION GRID / GRID+ via the vendor cloud",
-  "author": "nagelp",
+  "author": {
+    "name": "nagelp",
+    "email": "622489+nagelp@users.noreply.github.com"
+  },
   "license": "MIT",
   "keywords": [
-    "iobroker",
+    "ioBroker",
     "sunbooster",
     "powerstation",
     "grid",
@@ -17,7 +20,7 @@
     "url": "https://github.com/nagelp/ioBroker.sunbooster"
   },
   "engines": {
-    "node": ">=20"
+    "node": ">=22"
   },
   "main": "main.js",
   "files": [
@@ -28,15 +31,15 @@
     "LICENSE"
   ],
   "dependencies": {
-    "@iobroker/adapter-core": "^3.2.3",
+    "@iobroker/adapter-core": "^3.4.3",
     "ws": "^8.18.0"
   },
   "devDependencies": {
     "@alcalzone/release-script": "^5.2.1",
     "@alcalzone/release-script-plugin-iobroker": "^5.2.0",
     "@alcalzone/release-script-plugin-license": "^5.2.2",
-    "@iobroker/testing": "^5.0.0",
-    "mocha": "^11.8.0"
+    "@iobroker/testing": "^6.3.3",
+    "mocha": "^12.0.3"
   },
   "scripts": {
     "test:unit": "node --test test/unit/client.test.js test/unit/clock.test.js test/unit/extract-credentials.test.js test/unit/mapping.test.js test/unit/timer.test.js test/unit/token-store.test.js",

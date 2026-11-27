@@ -1,0 +1,21 @@
+{
+    "Device & tokens": "Apparaat & tokens",
+    "Enter the values printed by tools/extract-credentials.js (see the README for how to capture a login). Tokens rotate automatically; the refresh token is valid ~30 days.": "Vul de waarden in die tools/extract-credentials.js toont (hoe je een login vastlegt, staat in de README). Tokens worden automatisch vernieuwd; het refresh-token is ~30 dagen geldig.",
+    "Access token": "Access-token",
+    "Full value starting with 'Bearer '": "Volledige waarde, beginnend met 'Bearer '",
+    "Refresh token": "Refresh-token",
+    "Access token expiry (unix seconds)": "Verloop access-token (Unix-seconden)",
+    "Refresh token expiry (unix seconds)": "Verloop refresh-token (Unix-seconden)",
+    "User id (uid)": "Gebruikers-ID (uid)",
+    "Product key": "Productsleutel",
+    "Device key": "Apparaatsleutel",
+    "Advanced": "Geavanceerd",
+    "Live update interval (seconds)": "Interval live-updates (seconden)",
+    "Every N seconds the adapter asks the device to push live values, as the app does while it is open. 0 disables it (values then only update when the device reports on its own). Minimum 5.": "Elke N seconden vraagt de adapter het apparaat om live-waarden te sturen, zoals de app doet zolang die open is. 0 schakelt dit uit (waarden veranderen dan alleen als het apparaat uit zichzelf meldt). Minimaal 5.",
+    "WebSocket URL": "WebSocket-URL",
+    "REST API base URL": "Basis-URL REST-API",
+    "Keep the device clock in sync": "Apparaatklok gelijk houden",
+    "The device runs its charge and feed-in timers on its own clock, which drifts and doesn't follow daylight saving time. Set it from this host's clock (local time zone) when the adapter starts, every few hours (below), and whenever it is more than 30 s off (at most every 10 minutes).": "Het apparaat voert zijn laad- en terugleveringstimers uit op zijn eigen klok, die verloopt en niet naar zomertijd overschakelt. Die wordt gelijkgezet met de klok van deze host (lokale tijdzone) bij het starten van de adapter, om de paar uur (hieronder) en zodra hij meer dan 30 s afwijkt (hooguit elke 10 minuten).",
+    "Set the device clock every (hours)": "Apparaatklok gelijkzetten elke (uur)",
+    "0 = only when it is more than 30 s off. The clock drifts by about 10-20 s a day.": "0 = alleen als hij meer dan 30 s afwijkt. De klok verloopt ongeveer 10-20 s per dag."
+}

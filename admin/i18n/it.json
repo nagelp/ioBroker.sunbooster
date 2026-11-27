@@ -1,0 +1,21 @@
+{
+    "Device & tokens": "Dispositivo e token",
+    "Enter the values printed by tools/extract-credentials.js (see the README for how to capture a login). Tokens rotate automatically; the refresh token is valid ~30 days.": "Inserire i valori stampati da tools/extract-credentials.js (il README spiega come catturare un login). I token si rinnovano automaticamente; il refresh token è valido ~30 giorni.",
+    "Access token": "Token di accesso",
+    "Full value starting with 'Bearer '": "Valore completo, che inizia con 'Bearer '",
+    "Refresh token": "Refresh token",
+    "Access token expiry (unix seconds)": "Scadenza del token di accesso (secondi Unix)",
+    "Refresh token expiry (unix seconds)": "Scadenza del refresh token (secondi Unix)",
+    "User id (uid)": "ID utente (uid)",
+    "Product key": "Chiave prodotto",
+    "Device key": "Chiave dispositivo",
+    "Advanced": "Avanzate",
+    "Live update interval (seconds)": "Intervallo aggiornamenti live (secondi)",
+    "Every N seconds the adapter asks the device to push live values, as the app does while it is open. 0 disables it (values then only update when the device reports on its own). Minimum 5.": "Ogni N secondi l'adattatore chiede al dispositivo di inviare i valori live, come fa l'app quando è aperta. 0 lo disattiva (i valori cambiano solo quando il dispositivo li comunica da sé). Minimo 5.",
+    "WebSocket URL": "URL WebSocket",
+    "REST API base URL": "URL base API REST",
+    "Keep the device clock in sync": "Mantieni sincronizzato l'orologio del dispositivo",
+    "The device runs its charge and feed-in timers on its own clock, which drifts and doesn't follow daylight saving time. Set it from this host's clock (local time zone) when the adapter starts, every few hours (below), and whenever it is more than 30 s off (at most every 10 minutes).": "Il dispositivo esegue i timer di carica e immissione secondo il proprio orologio, che deriva e non passa all'ora legale. Viene regolato sull'orologio di questo host (fuso orario locale) all'avvio dell'adattatore, ogni poche ore (sotto) e quando si discosta di oltre 30 s (al massimo ogni 10 minuti).",
+    "Set the device clock every (hours)": "Regola l'orologio del dispositivo ogni (ore)",
+    "0 = only when it is more than 30 s off. The clock drifts by about 10-20 s a day.": "0 = solo quando si discosta di oltre 30 s. L'orologio deriva di circa 10-20 s al giorno."
+}

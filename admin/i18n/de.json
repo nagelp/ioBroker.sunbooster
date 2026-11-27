@@ -1,0 +1,21 @@
+{
+    "Device & tokens": "Gerät & Tokens",
+    "Enter the values printed by tools/extract-credentials.js (see the README for how to capture a login). Tokens rotate automatically; the refresh token is valid ~30 days.": "Die von tools/extract-credentials.js ausgegebenen Werte eintragen (wie man einen Login mitschneidet, steht in der README). Die Tokens werden automatisch erneuert; der Refresh-Token ist ca. 30 Tage gültig.",
+    "Access token": "Access-Token",
+    "Full value starting with 'Bearer '": "Vollständiger Wert, beginnend mit 'Bearer '",
+    "Refresh token": "Refresh-Token",
+    "Access token expiry (unix seconds)": "Ablauf des Access-Tokens (Unix-Sekunden)",
+    "Refresh token expiry (unix seconds)": "Ablauf des Refresh-Tokens (Unix-Sekunden)",
+    "User id (uid)": "Benutzer-ID (uid)",
+    "Product key": "Product Key",
+    "Device key": "Device Key",
+    "Advanced": "Erweitert",
+    "Live update interval (seconds)": "Live-Update-Intervall (Sekunden)",
+    "Every N seconds the adapter asks the device to push live values, as the app does while it is open. 0 disables it (values then only update when the device reports on its own). Minimum 5.": "Alle N Sekunden bittet der Adapter das Gerät, Live-Werte zu senden, wie es die App tut, solange sie geöffnet ist. 0 schaltet das ab (dann ändern sich die Werte nur, wenn das Gerät von sich aus meldet). Minimum 5.",
+    "WebSocket URL": "WebSocket-URL",
+    "REST API base URL": "REST-API-Basis-URL",
+    "Keep the device clock in sync": "Geräteuhr synchron halten",
+    "The device runs its charge and feed-in timers on its own clock, which drifts and doesn't follow daylight saving time. Set it from this host's clock (local time zone) when the adapter starts, every few hours (below), and whenever it is more than 30 s off (at most every 10 minutes).": "Das Gerät führt seine Lade- und Einspeise-Timer nach der eigenen Uhr aus, die driftet und die Sommerzeit nicht umstellt. Sie wird nach der Uhr dieses Hosts (lokale Zeitzone) gestellt: beim Start des Adapters, alle paar Stunden (unten) und wenn sie mehr als 30 s abweicht (höchstens alle 10 Minuten).",
+    "Set the device clock every (hours)": "Geräteuhr stellen alle (Stunden)",
+    "0 = only when it is more than 30 s off. The clock drifts by about 10-20 s a day.": "0 = nur, wenn sie mehr als 30 s abweicht. Die Uhr driftet um etwa 10-20 s pro Tag."
+}

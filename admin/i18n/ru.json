@@ -1,0 +1,21 @@
+{
+    "Device & tokens": "Устройство и токены",
+    "Enter the values printed by tools/extract-credentials.js (see the README for how to capture a login). Tokens rotate automatically; the refresh token is valid ~30 days.": "Введите значения, выведенные tools/extract-credentials.js (как записать вход в приложение, описано в README). Токены обновляются автоматически; refresh-токен действителен ~30 дней.",
+    "Access token": "Access-токен",
+    "Full value starting with 'Bearer '": "Полное значение, начинающееся с 'Bearer '",
+    "Refresh token": "Refresh-токен",
+    "Access token expiry (unix seconds)": "Срок действия access-токена (Unix-секунды)",
+    "Refresh token expiry (unix seconds)": "Срок действия refresh-токена (Unix-секунды)",
+    "User id (uid)": "ID пользователя (uid)",
+    "Product key": "Ключ продукта",
+    "Device key": "Ключ устройства",
+    "Advanced": "Дополнительно",
+    "Live update interval (seconds)": "Интервал живых обновлений (секунды)",
+    "Every N seconds the adapter asks the device to push live values, as the app does while it is open. 0 disables it (values then only update when the device reports on its own). Minimum 5.": "Каждые N секунд адаптер просит устройство передавать текущие значения, как это делает открытое приложение. 0 отключает это (тогда значения обновляются, только когда устройство сообщает их само). Минимум 5.",
+    "WebSocket URL": "URL WebSocket",
+    "REST API base URL": "Базовый URL REST API",
+    "Keep the device clock in sync": "Синхронизировать часы устройства",
+    "The device runs its charge and feed-in timers on its own clock, which drifts and doesn't follow daylight saving time. Set it from this host's clock (local time zone) when the adapter starts, every few hours (below), and whenever it is more than 30 s off (at most every 10 minutes).": "Устройство выполняет таймеры зарядки и подачи в сеть по собственным часам, которые уходят и не переходят на летнее время. Адаптер ставит их по часам этого хоста (местный часовой пояс): при запуске, каждые несколько часов (ниже) и при расхождении более 30 с (не чаще раза в 10 минут).",
+    "Set the device clock every (hours)": "Ставить часы устройства каждые (часов)",
+    "0 = only when it is more than 30 s off. The clock drifts by about 10-20 s a day.": "0 = только при расхождении более 30 с. Часы уходят примерно на 10-20 с в сутки."
+}
