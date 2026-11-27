@@ -155,7 +155,7 @@ Most of the code in this repository, and much of this README, was written by an 
 
 MIT License
 
-Copyright (c) 2026 nagelp <622489+nagelp@users.noreply.github.com>  
+Copyright (c) 2026 nagelp <sunbooster-dev@patrick-nagel.net>  
 Copyright (c) 2026 Shad0wWeaver
 
 See [LICENSE](LICENSE) for the full text.
