@@ -116,7 +116,7 @@ Most of the code in this repository, and much of this README, was written by an 
 
 - (nagelp) Requires Node.js >= 22, js-controller >= 6.0.11 and admin >= 7.6.20
 - (nagelp) Admin settings translated; the adapter's timers are cleaned up by ioBroker on stop, and stopping no longer waits out a reconnect delay
-- (nagelp) Maintenance: fixes for the ioBroker repository checker (metadata, dependencies, tests on Node.js 22-26)
+- (nagelp) Maintenance: fixes for the ioBroker repository checker (metadata, dependencies, tests on Node.js 22-26), code linted with the ioBroker ESLint config
 
 ### 0.4.0 (2026-11-27)
 
@@ -131,25 +131,7 @@ Most of the code in this repository, and much of this README, was written by an 
 
 - (nagelp) Fix: detect a silently dropped cloud connection (heartbeat) and reconnect, so live values no longer freeze
 
-### 0.3.0
-
-- (nagelp) Tokens are now stored encrypted and no longer in the readable info.tokens state. Re-enter the tokens in the adapter settings after updating and delete info.tokens.
-
-### 0.2.3
-
-- (nagelp) Updated README and meta data
-
-### 0.2.1
-
-- (nagelp) Add adapter icon
-
-### 0.2.0
-
-- (nagelp) Live updates: periodically ask the device to push current values (configurable interval)
-
-### 0.1.0
-
-- (nagelp) Initial release
+Older changes: [CHANGELOG_OLD.md](CHANGELOG_OLD.md)
 
 ## License
 
