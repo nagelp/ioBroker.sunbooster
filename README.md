@@ -112,7 +112,7 @@ Most of the code in this repository, and much of this README, was written by an 
     Placeholder for the next version (at the beginning of the line):
     ### **WORK IN PROGRESS**
 -->
-### **WORK IN PROGRESS**
+### 0.4.0 (2026-11-27)
 
 - (nagelp) New: charge timer controls `timerCharge` (charge now with 200-1000 W, e.g. 200 W), `chargeTimer` (timer slots as JSON) and `chargeTimerEnabled`
 - (nagelp) New: option to keep the device clock in sync (at start, every few hours and when it drifts by more than 30 s)

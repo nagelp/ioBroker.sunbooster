@@ -1,7 +1,7 @@
 {
   "common": {
     "name": "sunbooster",
-    "version": "0.3.2-alpha.0",
+    "version": "0.4.0",
     "title": "Sunbooster® Powerstation GRID/GRID+",
     "titleLang": {
       "en": "Sunbooster® Powerstation GRID/GRID+",
@@ -42,6 +42,19 @@
     ],
     "messagebox": false,
     "news": {
+      "0.4.0": {
+        "en": "New: charge timer controls `timerCharge` (charge now with 200-1000 W, e.g. 200 W), `chargeTimer` (timer slots as JSON) and `chargeTimerEnabled`\nNew: option to keep the device clock in sync (at start, every few hours and when it drifts by more than 30 s)",
+        "de": "Neu: Der Ladetimer steuert TimerCharge (jetzt mit 200-1000 W, z. B. 200 W), ChargeTimer (Timer-Slots als JSON) und ChargeTimerEnabled\nNeu: Option zum Synchronisieren der Geräteuhr (am Anfang, alle paar Stunden und bei mehr als 30 s)",
+        "ru": "Новое: таймер зарядки управляет «TimerCharge» (теперь зарядка мощностью 200-1000 Вт, например 200 Вт), «ChargeTimer» (слоты таймера в формате JSON) и «ChargeTimerEnabled»\nНовое: возможность синхронизировать часы устройства (при запуске, каждые несколько часов и при движении более чем на 30 с)",
+        "pt": "Novo: o timer controla `TimerCharge` (carregue agora com 200-1000 W, ex: 200 W), `ChargeTimer` (slots em JSON) e `ChargeTimerEnabled`\nNovo: opção para sincronizar o relógio (no início, a cada poucas horas e mais de 30 s)",
+        "nl": "Nieuw: de laadtimer regelt `TimerCharge` (nu opladen met 200-1000 W, bijvoorbeeld 200 W), `ChargeTimer` (timersleuven als JSON) en `ChargeTimeEnabled`\nNieuw: optie om de klok van het apparaat gesynchroniseerd te houden (bij het begin, om de paar uur en wanneer de klok meer dan 30 seconden verandert)",
+        "fr": "Nouveau : le minuteur contrôle `TimerCharge` (charge maintenant de 200 à 1 000 W, par exemple 200 W), `ChargeTimer` (créneaux au format JSON) et `ChargeTimerEnabled`\nNouveau : option pour synchroniser l'horloge de l'appareil (au démarrage, toutes les heures et plus de 30 s)",
+        "it": "Novità: il timer di ricarica controlla `TimerCharge` (carica ora con 200-1000 W, ad es. 200 W), `ChargeTimer` (slot JSON) e `ChargeTimerEnabled`\nNuovo: opzione per sincronizzare l'orologio (all'inizio, ogni poche ore e di oltre 30 s)",
+        "es": "Nuevo: el temporizador de carga controla `TimerCharge` (carga ahora con 200 a 1000 W, p. ej. 200 W), `ChargeTimer` (ranuras como JSON) y `ChargeTimerEnabled`\nNuevo: opción para sincronizar el reloj del dispositivo (al principio, cada pocas horas y cuando se retrasa más de 30 s)",
+        "pl": "Nowość: zegar ładowania steruje „TimerCharge” (ładuj teraz 200-1000 W, np. 200 W), „ChargeTimer” (gniazda czasowe jako JSON) i „ChargeTimeRenabled”\nNowość: opcja synchronizacji zegara urządzenia (na początku, co kilka godzin i gdy dryfuje o więcej niż 30 s)",
+        "uk": "Нове: таймер заряджання контролює `TimerCharge` (заряджайте зараз 200-1000 Вт, наприклад, 200 Вт), `ChargeTimer` (слоти таймера як JSON) та `ChargeTimeRabled`\nНове: можливість синхронізувати годинник пристрою (на старті, кожні кілька годин і коли він дрейфує більше 30 с)",
+        "zh-cn": "新增：充电计时器控制 `timerCharge`（现在以 200-1000 W 充电，例如 200 W）、`ChargeTimer`（计时器插槽为 JSON）和 `ChargeTimerEnabled`\n新增：保持设备时钟同步的选项（启动时、每隔几个小时以及偏移超过 30 秒时）"
+      },
       "0.3.2-alpha.0": {
         "en": "Automated npm releases via GitHub Actions (Trusted Publishing)",
         "de": "Automatisierte NPM-Releases über GitHub Actions",
@@ -74,10 +87,6 @@
       "0.2.0": {
         "en": "Live updates: periodically ask the device to push current values (configurable interval)",
         "de": "Live-Werte: Gerät wird regelmäßig zum Senden aktueller Werte aufgefordert (Intervall einstellbar)"
-      },
-      "0.1.0": {
-        "en": "Initial release",
-        "de": "Erste Version"
       }
     }
   },
