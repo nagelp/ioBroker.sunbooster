@@ -137,7 +137,6 @@ Older changes: [CHANGELOG_OLD.md](CHANGELOG_OLD.md)
 
 MIT License
 
-Copyright (c) 2026 nagelp <sunbooster-dev@patrick-nagel.net>  
-Copyright (c) 2026 Shad0wWeaver
+Copyright (c) 2026 nagelp <sunbooster-dev@patrick-nagel.net>
 
 See [LICENSE](LICENSE) for the full text.
